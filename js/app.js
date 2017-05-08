@@ -112,9 +112,13 @@ function player1Wins() {
   //changes the text in the p1Score tag to whatever xScore is
   $('#p1Score').html(xScore);
   //adds the h1 class with this text to the index.html doc when checkForX has determined that player1 has won
-  $('h2').append('<br><h4 class="winTag">The X\'s Have It!</h4>')
+  $('h1').append('<h4 class="winTag">The X\'s Have It!</h4>')
+  //hids the current player header
+  $('h2').hide();
   //changes the value of winner to true
   winner = true;
+  //changes color of input button upon game final
+  $('input').addClass('gameOver');
 }
 
 //same functionality as player1Wins
@@ -122,14 +126,18 @@ function player2Wins() {
   var oScore = +$('#p2Score').text();
   oScore++;
   $('#p2Score').html(oScore);
-  $('h2').append('<br><h4 class="winTag">The O\'s Have It!</h4>')
+  $('h1').append('<br><h4 class="winTag">The O\'s Have It!</h4>');
+  $('h2').hide();
   winner = true;
+  $('input').addClass('gameOver');
 }
 
 //function to add an h1 showing its a cats game should no other requirements be met to determine a winner
 function catGame() {
-  $('h2').append('<br><h4 class="winTag">The Cat Has It!</h4>');
+  $('h1').append('<br><h4 class="winTag">The Cat Has It!</h4>');
+  $('h2').hide();
   winner = true;
+  $('input').addClass('gameOver');
 }
 
 //function to clear the board when the input button is clicked
@@ -145,8 +153,12 @@ function clearBoard() {
   clickCount = 0;
   //removes the "you win!" message from the screen
   $('.winTag').remove();
+  $('h1').removeClass();
   //resets the winner value to being false
   winner = false;
+  //resets input button to original color(class)
+  $('input').removeClass();
+  $('h2').show();
 }
 
 });

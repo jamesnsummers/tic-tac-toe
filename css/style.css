@@ -1,6 +1,7 @@
 body {
   text-align: center;
   font-family: 'Roboto', sans-serif;
+  background-color: rgba(255, 160, 88, .4);
 }
 
 img {
@@ -17,6 +18,14 @@ h2 {
 table {
   margin: 20px auto;
   border: hidden;
+}
+
+.player1 {
+  background-color: rgba(255, 143, 140, .4);
+}
+
+.player2 {
+  background-color: rgba(135, 217, 222, .4);
 }
 
 th {
@@ -36,15 +45,24 @@ table.board {
   border-collapse: collapse;
 }
 
+.winTag {
+  margin: 10px 0 0 0;
+}
+
 input {
+  background-color: rgba(63, 180, 82, .4);
   font-size: .9em;
   font-weight: bolder;
   border-radius: 5px;
   cursor: pointer;
-  border: 1px solid green;
+  border: 1px solid rgb(63, 180, 82);
   font-family: 'Roboto', sans-serif;
 }
 
 footer {
   font-size: 3px;
+}
+
+.gameOver {
+  background-color: rgba(255, 79, 80, .4);
 }
