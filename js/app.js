@@ -18,7 +18,7 @@ var winner = false;
 
 //function to fill in the table squares with x or o by clicking in them
 function takeTurn(e) {
-  //prevents clicking the same square twice
+  //prevents the click action from performming its default
   e.preventDefault();
   //if the winner=true
   if (winner) {
